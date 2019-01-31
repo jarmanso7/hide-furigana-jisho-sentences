@@ -5,6 +5,7 @@
 // @author       jarmanso7
 // @match        https://jisho.org/search/*#sentences
 // @match        https://jisho.org/search/*%20%23sentences
+// @namespace https://greasyfork.org/users/241544
 // ==/UserScript==
 
 function AddToggleFuriganaLink(){
@@ -13,14 +14,14 @@ function AddToggleFuriganaLink(){
 	addToggleFuriganaLink.setAttribute ('id', 'toggle-furigana-custom-link');
 	addToggleFuriganaLink.setAttribute ('class', 'concept_light-status_link');
 	addToggleFuriganaLink.innerText = 'Furigana off';
-
+	
 	var sentences = document.getElementsByClassName("sentences")[0]
-
+	
 	var hrDivider = document.createElement ( 'hr' );
-
+	
 	sentences.insertBefore(hrDivider, sentences.firstChild);
 	sentences.insertBefore(addToggleFuriganaLink, sentences.firstChild);
-
+	
 	/* ------------------------ ACTIVATE CUSTOM LINK ---------------------*/
 	document.getElementById ('toggle-furigana-custom-link').addEventListener(
 		'click', ButtonClickAction, false
@@ -32,15 +33,15 @@ function AddToggleFuriganaLink(){
 }
 
 function ToggleFuriganaEvent(){
-
+	
 	debugger;
-
+	
 	var furiganaLink = document.getElementById ('toggle-furigana-custom-link');
-
+	
 	if (furiganaLink.innerText == 'Furigana off'){
 		LoopThroughFuriganaTagsChangeDisplayProperty('none');
 		furiganaLink.innerText = 'Furigana on';
-	}
+	}	
 	else {
 		LoopThroughFuriganaTagsChangeDisplayProperty('block');
 		furiganaLink.innerText = 'Furigana off';
@@ -48,10 +49,10 @@ function ToggleFuriganaEvent(){
 }
 
 function LoopThroughFuriganaTagsChangeDisplayProperty(displayValue){
-
+	
 	var furiganaTags = document.getElementsByClassName("furigana");
-
-	for (var i = 0; i < furiganaTags.length; i++) {
+	
+	for (var i = 0; i < furiganaTags.length; i++) { 
 	  furiganaTags[i].style.display = displayValue;
 	}
 }
