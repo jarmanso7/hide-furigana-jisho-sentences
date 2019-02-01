@@ -3,8 +3,8 @@
 // @version      0.1
 // @description  Enables a link to toggle between Furigana On/Off in the page of sentences at Jisho.org
 // @author       jarmanso7
-// @match        https://jisho.org/search/*#sentences
-// @match        https://jisho.org/search/*%20%23sentences
+// @match        https://jisho.org/search/*#sentences*
+// @match        https://jisho.org/search/*%20%23sentences*
 // @namespace https://greasyfork.org/users/241544
 // ==/UserScript==
 
@@ -33,8 +33,6 @@ function AddToggleFuriganaLink(){
 }
 
 function ToggleFuriganaEvent(){
-	
-	debugger;
 	
 	var furiganaLink = document.getElementById ('toggle-furigana-custom-link');
 	
