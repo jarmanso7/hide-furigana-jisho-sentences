@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Hide Furigana in Jisho Sentences
-// @version      0.1
+// @version      0.2
 // @description  Enables a link to toggle between Furigana On/Off in the page of sentences at Jisho.org
 // @author       jarmanso7
 // @match        https://jisho.org/search/*#sentences*
